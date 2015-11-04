@@ -573,7 +573,7 @@ namespace Detail
                 {
                     if (m_exception)
                     {
-                        AutoResource<Exception> ex(m_exception);
+                        ScopedPointer<Exception> ex(m_exception);
                         return m_object->OnException(*ex);
                     }
                     else
@@ -640,7 +640,7 @@ namespace Detail
                 {
                     if (m_exception)
                     {
-                        AutoResource<Exception> ex(m_exception);
+                        ScopedPointer<Exception> ex(m_exception);
                         return m_functor.m_onException(*ex);
                     }
                     else
@@ -674,7 +674,7 @@ namespace Detail
                 {
                     if (m_exception)
                     {
-                        AutoResource<Exception> ex(m_exception);
+                        ScopedPointer<Exception> ex(m_exception);
                         return m_functor.m_onException(*ex);
                     }
                     else
